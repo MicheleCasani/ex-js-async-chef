@@ -77,10 +77,20 @@ async function getChefBirthday(id) {
 }
 
 // Chiamo la funzione con ID ricetta = 1 e gestisco il risultato
-getChefBirthday(1)
-    // Se la Promise si risolve con successo, stampo la data formattata
-    .then(birthDate => console.log(
-        `La data di nascita dello chef è: ${birthDate}`
-    ))
-    // Se la Promise viene rigettata, stampo l'errore in console
-    .catch(error => console.error(error));
+// getChefBirthday(1)
+//     // Se la Promise si risolve con successo, stampo la data formattata
+//     .then(birthDate => console.log(
+//         `La data di nascita dello chef è: ${birthDate}`
+//     ))
+//     // Se la Promise viene rigettata, stampo l'errore in console
+//     .catch(error => console.error(error));
+
+(async () => {
+    try {
+        const birthDate = await getChefBirthday(1);
+        console.log(`La data di nascita dello chef è: ${birthDate}`);
+    } catch (error) {
+        console.error(error);
+    }
+})();
+
